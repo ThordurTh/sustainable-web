@@ -27,7 +27,7 @@ function Inout() {
     parseFloat(emails) * 20 +
     parseFloat(browsing) * 100;
 
-  const kmCalculated = gramsCalculated / 123;
+  const kmCalculated = gramsCalculated / 125;
 
   return (
     <>
@@ -35,7 +35,15 @@ function Inout() {
         <div className="inputs">
           <div>
             <label for="some">Social media hours per day</label>
-            <input onKeyUp={someHours} type="text" id="some" name="some" />
+            <input
+              onKeyUp={someHours}
+              type="text"
+              id="some"
+              name="some"
+              min="0"
+              max="24"
+              required
+            />
           </div>
           <div>
             <label for="emails">Emails per day</label>
@@ -48,6 +56,8 @@ function Inout() {
               type="text"
               id="browsing"
               name="browsing"
+              min="0"
+              max="24"
             />
           </div>
         </div>
