@@ -1,0 +1,42 @@
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600&display=swap");
+
+// VARIABLES
+
+:root {
+  --fontMain: "Barlow Condensed", sans-serif;
+  --backgroundColorMain: #212121;
+  --colorTextPrimary: #ffffff;
+  --colorTextSecondary: #a7a7a7;
+  --colorCopyright: #10120e;
+  --colorCopyrightText: #dbd6d6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--backgroundColorMain);
+}
+
+h1,
+h2 {
+  font-family: var(--fontMain);
+  font-size: 5vw;
+}
+
+h3 {
+  font-size: 2.2vw;
+}
+
+p {
+  font-size: 1rem;
+}
+
+a {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}

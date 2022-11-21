@@ -1,3 +1,35 @@
-.wowie {
-  background-color: green;
+@import "../index.scss";
+
+.header {
+  padding: 2rem;
+  ul {
+    display: flex;
+    list-style: none;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+
+    li {
+      list-style: none;
+      color: white;
+    }
+  }
+  .menu-svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+  }
+
+  .advice-logo {
+    color: white;
+    width: 160px;
+    height: 64px;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    font-family: var(--fontMain);
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
 }
