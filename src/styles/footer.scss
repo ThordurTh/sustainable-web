@@ -1,0 +1,55 @@
+@import "../index.scss";
+
+.footer-wrapper {
+  margin: 2rem;
+  border: 0 solid;
+  border-color: hsla(0, 0%, 65%, 0.5);
+  border-top-width: 1px;
+  font-family: var(--fontMain);
+  color: var(--colorTextPrimary);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .address {
+    line-height: 2rem;
+    h3 {
+      font-size: 2rem;
+      padding-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+  }
+  .contact {
+    line-height: 2rem;
+    h3 {
+      font-size: 2rem;
+      padding-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+  }
+  .social {
+    line-height: 2rem;
+    h3 {
+      font-size: 2rem;
+      padding-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .contact {
+    grid-column: 2/4;
+  }
+  .social {
+    grid-column: 4/5;
+  }
+}
