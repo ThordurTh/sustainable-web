@@ -1,43 +1,31 @@
 import React from "react";
 import "../styles/inout.scss";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function Inout() {
-  const [soMe, setSoMe] = useState(0);
-  const [emails, setEmails] = useState(0);
-  const [browsing, setBrowsing] = useState(0);
+  const [totalG, setTotalG] = useState(0);
+  const [totalKM, setTotalKM] = useState(0);
+  const theForm = useRef(null);
 
-  const someHours = (e) => {
-    // e.preventDefault();
-    // console.log(e.target.value);
-    setSoMe(e.target.value);
-    // console.log(`soMe is: ${soMe}`);
-  };
-
-  const emailCount = (e) => {
-    setEmails(e.target.value);
-  };
-
-  const browsingHours = (e) => {
-    setBrowsing(e.target.value);
-  };
-
-  const gramsCalculated =
-    parseFloat(soMe) * 120 +
-    parseFloat(emails) * 20 +
-    parseFloat(browsing) * 100;
-
-  const kmCalculated = gramsCalculated / 125;
+  async function submit(e) {
+    e.preventDefault();
+    let someValue = parseFloat(theForm.current.elements.some.value) * 120;
+    let emailsValue = parseFloat(theForm.current.elements.emails.value) * 20;
+    let browsingValue =
+      parseFloat(theForm.current.elements.browsing.value) * 100;
+    // console.log(someValue + emailsValue + browsingValue);
+    setTotalG(someValue + emailsValue + browsingValue);
+    setTotalKM(totalG / 125);
+  }
 
   return (
     <>
-      <form>
+      <form onSubmit={submit} ref={theForm}>
         <div className="inputs">
           <div>
-            <label for="some">Social media hours per day</label>
+            <label htmlFor="some">Social media hours per day</label>
             <input
-              onKeyUp={someHours}
-              type="text"
+              type="number"
               id="some"
               name="some"
               min="0"
@@ -46,14 +34,13 @@ function Inout() {
             />
           </div>
           <div>
-            <label for="emails">Emails per day</label>
-            <input onKeyUp={emailCount} type="text" id="emails" name="emails" />
+            <label htmlFor="emails">Emails per day</label>
+            <input type="number" id="emails" name="emails" />
           </div>
           <div>
-            <label for="browsing">Browsing hours per day</label>
+            <label htmlFor="browsing">Browsing hours per day</label>
             <input
-              onKeyUp={browsingHours}
-              type="text"
+              type="number"
               id="browsing"
               name="browsing"
               min="0"
@@ -61,10 +48,21 @@ function Inout() {
             />
           </div>
         </div>
+        <button>check</button>
       </form>
       <div className="outputs">
-        <p className="outputGrams">{gramsCalculated}grams</p>
-        <p className="outputKM">{kmCalculated.toFixed(2)} km</p>
+        <p>
+          With the ammount of CO2e emitted by your internet traffic you could
+          have traveled from KEA to Kongens Nytov
+        </p>
+        <p className="outputGrams">
+          {totalG}
+          grams
+        </p>
+        <p className="outputKM">
+          {totalKM}
+          km
+        </p>
       </div>
     </>
   );
