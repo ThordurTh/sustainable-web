@@ -1,31 +1,70 @@
-form {
-  color: white;
-  padding: 1rem;
-  border: 2px solid white;
-  .inputs {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    div {
+section {
+  form {
+    color: white;
+    padding: 1rem;
+    // border: 2px solid white;
+    .inputs {
       display: flex;
-      flex-direction: column;
-      //   justify-content: center;
-      text-align: center;
-      gap: 1rem;
+      flex-direction: row;
+      justify-content: space-evenly;
+      div {
+        display: flex;
+        flex-direction: column;
+        //   justify-content: center;
+        text-align: center;
+        gap: 1rem;
+      }
+      button {
+        width: 10rem;
+        margin: 0 auto;
+      }
     }
   }
-}
 
-.outputs {
-  color: white;
-  padding: 1rem;
-  border: 2px solid white;
-}
+  .outputs {
+    color: white;
+    padding: 1rem;
+    border: 2px solid white;
+  }
 
-.progress-bar {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  svg {
+  .progress-bar {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    img {
+      width: 90vw;
+      //   height: 50px;
+    }
+  }
+
+  .destinations {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-between;
+    width: 90vw;
+    margin: 0 auto;
+    padding: 1rem;
+    li {
+      align-self: center;
+      transform: rotate(-15deg);
+      // margin-left: 1rem;
+    }
+  }
+  @for $i from 1 through 5 {
+    .destinations li:nth-child(3n + #{$i}) {
+      margin-left: 0.3rem * $i;
+    }
+  }
+  .output-p {
+    color: white;
+    font-size: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1rem 1rem;
+    span {
+      color: #4ffdc9;
+    }
   }
 }
