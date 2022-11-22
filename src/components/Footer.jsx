@@ -3,7 +3,7 @@ import "../styles/footer.scss";
 function Footer() {
   return (
     <>
-      <div className="footer-wrapper">
+      <footer className="footer-wrapper">
         <div className="address">
           <h3>ADDRESS /</h3>
           <p>Gammel Køngevej 3E</p>
@@ -24,7 +24,7 @@ function Footer() {
           <p>LinkedIn</p>
           <p>Instagram</p>
         </div>
-      </div>
+      </footer>
       <div className="copyright">&copy; 2022 M / Þ</div>
     </>
   );

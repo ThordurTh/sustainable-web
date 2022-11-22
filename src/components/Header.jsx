@@ -1,7 +1,5 @@
 import React from "react";
 import "../styles/header.scss";
-import "../assets/advice.svg";
-import "../assets/menu.svg";
 
 function Header() {
   return (
