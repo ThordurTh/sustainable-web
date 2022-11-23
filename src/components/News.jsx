@@ -2,12 +2,14 @@ import "../styles/news.scss";
 import NewsCard from "./NewsCard";
 function News(props) {
   return (
-    <section className="news-section-wrapper">
-      <h2>News</h2>
-      {props.news.map((news) => (
-        <NewsCard key={news.id} {...news} />
-      ))}
-    </section>
+    <div>
+      <h2 className="news-header">News</h2>
+      <section className="news-section-wrapper">
+        {props.news.map((news) => (
+          <NewsCard key={news.id} {...news} />
+        ))}
+      </section>
+    </div>
   );
 }
 

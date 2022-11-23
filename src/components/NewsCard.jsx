@@ -4,7 +4,7 @@ function NewsCard(props) {
   return (
     <article className="news-card">
       <img src={props.images} alt={props.headline} />
-      <h2>{props.headline}</h2>
+      <h3>{props.headline}</h3>
       <p>{props.copytext}</p>
     </article>
   );
