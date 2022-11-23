@@ -82,10 +82,10 @@ function Inout() {
         </div>
         <button>check</button>
       </form>
-      <div className="outputs">
+      {/* <div className="outputs">
         <p className="outputGrams">{totalG}grams</p>
         <p className="outputKM">{totalG / 125}km</p>
-      </div>
+      </div> */}
       <div className="progress-bar">{images()}</div>
       <ul className="destinations">
         <li>KEA</li>
