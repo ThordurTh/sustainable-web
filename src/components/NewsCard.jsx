@@ -1,7 +1,18 @@
 import React from "react";
 import "../styles/news.scss";
-function NewsCard() {
-  return <div>NewsCard</div>;
+function NewsCard(props) {
+  return (
+    <article className="news-card">
+      <img src={props.images} alt={props.headline} />
+      <h2>{props.headline}</h2>
+      <p>{props.copytext}</p>
+    </article>
+  );
 }
+
+// "id": 4,
+// "headline": "NEWS THAT SHOCKED THE NATION",
+// "copytext": "Snow, real or fake? Company Y admits to controlling the weather!",
+// "images": null
 
 export default NewsCard;
