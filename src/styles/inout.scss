@@ -1,12 +1,48 @@
+@import "../index.scss";
+
 section {
+  font-size: 1.2rem;
+  font-family: var(--fontMain);
   form {
     color: white;
     padding: 1rem;
     // border: 2px solid white;
     .inputs {
+      font-size: 1.2rem;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
+      @media screen and (max-width: 600px) {
+        // flex-direction: column;
+        // gap: 1.5rem;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        appearance: none;
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type="number"] {
+        appearance: none;
+        -moz-appearance: textfield;
+      }
+      input {
+        text-align: center;
+        border: none;
+        padding: 0.8rem 0.5rem;
+        border-radius: 52px;
+        font-size: 1.2rem;
+        width: 12rem;
+        align-self: center;
+        @media screen and (max-width: 600px) {
+          // flex-direction: column;
+          // gap: 1.5rem;
+          width: 5rem;
+        }
+      }
+      input:focus {
+        outline: 3px solid var(--accentColor);
+      }
       div {
         display: flex;
         flex-direction: column;
@@ -14,9 +50,26 @@ section {
         text-align: center;
         gap: 1rem;
       }
+    }
+    .checkBtn {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 2rem 0 1rem;
       button {
-        width: 10rem;
+        cursor: pointer;
+        color: var(--backgroundColorMain);
+        font-size: 1.2rem;
+        // width: 10rem;
         margin: 0 auto;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 52px;
+        background-color: var(--accentColor);
+      }
+      button:active {
+        background-color: var(--colorCards);
+        color: var(--fontMain);
       }
     }
   }
@@ -43,28 +96,31 @@ section {
     flex-direction: row;
     color: white;
     justify-content: space-between;
-    width: 90vw;
+    width: 95vw;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1rem 0;
     li {
+      text-align: center;
       align-self: center;
       transform: rotate(-15deg);
-      // margin-left: 1rem;
+      margin-left: 1rem;
+      font-size: 1.2rem;
     }
   }
   @for $i from 1 through 5 {
     .destinations li:nth-child(3n + #{$i}) {
-      margin-left: 0.3rem * $i;
+      margin-left: 1rem / $i;
     }
   }
   .output-p {
     color: white;
     font-size: 2rem;
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
     padding: 3rem 1rem 1rem;
+    // text-align: center;
     span {
-      color: #4ffdc9;
+      color: var(--accentColor);
     }
   }
 }

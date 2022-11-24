@@ -15,6 +15,14 @@ function Inout() {
 
   function submit(e) {
     e.preventDefault();
+
+    const arr = [some, emails, browsing];
+    arr.forEach((item) => {
+      if (item.value === "") {
+        item.value = 0;
+      }
+    });
+
     let someValue = parseFloat(e.target.elements.some.value) * 120;
     let emailsValue = parseFloat(e.target.elements.emails.value) * 20;
     let browsingValue = parseFloat(e.target.elements.browsing.value) * 100;
@@ -45,22 +53,15 @@ function Inout() {
 
   return (
     <section className="inout">
-      <form onSubmit={submit}>
+      <form onSubmit={submit} autoComplete="off">
         <div className="inputs">
           <div>
             <label htmlFor="some">Social media hours per day</label>
-            <input
-              type="number"
-              id="some"
-              name="some"
-              min="0"
-              max="24"
-              required
-            />
+            <input type="number" id="some" name="some" min="0" max="24" />
           </div>
           <div>
             <label htmlFor="emails">Emails per day</label>
-            <input type="number" id="emails" name="emails" required />
+            <input type="number" id="emails" name="emails" />
           </div>
           <div>
             <label htmlFor="browsing">Browsing hours per day</label>
@@ -70,11 +71,13 @@ function Inout() {
               name="browsing"
               min="0"
               max="24"
-              required
             />
           </div>
         </div>
-        <button>check</button>
+        <div className="middle"></div>
+        <div className="checkBtn">
+          <button>Check results</button>
+        </div>
       </form>
       {/* <div className="outputs">
         <p className="outputGrams">{totalG}grams</p>
@@ -91,9 +94,9 @@ function Inout() {
       </ul>
       <p className="output-p">
         Your internet traffic equals to <span>{totalG}g</span> of CO2e and could
-        take you <span>{percentage}%</span> of the way from <span>KEA</span> to{" "}
-        <span>{destination}</span> which spans <span>{totalG / 125}km</span> in
-        an average sized car.
+        take you <span>{totalG / 125}km</span> in an average sized car. <br />{" "}
+        That equals to <span>{percentage}%</span> of the way from{" "}
+        <span>KEA</span> to <span>{destination}</span>.
       </p>
     </section>
   );
