@@ -1,0 +1,40 @@
+.info-section {
+  display: flex;
+  min-height: 80vh;
+  padding: 5rem;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  h1 {
+    font-size: 5rem;
+    color: var(--colorTextPrimary);
+  }
+  img {
+    width: 35vw;
+    height: 35vw;
+    min-width: 350px;
+    min-height: 350px;
+    margin-bottom: 1rem;
+    padding: 3rem;
+    border-style: none;
+    border-radius: 20rem;
+  }
+  p {
+    width: 45vw;
+    min-width: 300px;
+    color: var(--colorTextSecondary);
+    font-size: 1.4rem;
+  }
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+    padding: 2rem;
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
