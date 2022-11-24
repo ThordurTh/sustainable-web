@@ -19,7 +19,7 @@ function Info() {
           your daily internet usage produce.
         </p>
       </article>
-      <img src={servers}></img>
+      <img src={servers} alt="Image of servers"></img>
     </section>
   );
 }

@@ -32,22 +32,22 @@ function Inout() {
   useEffect(() => {
     if (totalG < 337.5 && totalG > 1) {
       setPercentage(Math.round((totalG / 337.5) * 100));
-      setImageSrc(<img src={progress1}></img>);
+      setImageSrc(<img src={progress1} alt="prgress bar"></img>);
       setDestination("Kongens Nytorv");
     } else if (totalG > 337.5 && totalG < 587.5) {
       setPercentage(Math.round((totalG / 587.5) * 100));
-      setImageSrc(<img src={progress2}></img>);
+      setImageSrc(<img src={progress2} alt="prgress bar"></img>);
       setDestination("Christianshavn");
     } else if (totalG > 587.5 && totalG < 1062) {
       setPercentage(Math.round((totalG / 1062) * 100));
-      setImageSrc(<img src={progress3}></img>);
+      setImageSrc(<img src={progress3} alt="prgress bar"></img>);
       setDestination("Amager Strand");
     } else if (totalG > 1062) {
       setPercentage(Math.round((totalG / 1412.5) * 100));
-      setImageSrc(<img src={progress4}></img>);
+      setImageSrc(<img src={progress4} alt="prgress bar"></img>);
       setDestination("Kastrup Lufthavn");
     } else {
-      setImageSrc(<img src={progress0}></img>);
+      setImageSrc(<img src={progress0} alt="prgress bar"></img>);
     }
   }, [totalG]);
 
