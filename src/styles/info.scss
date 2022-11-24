@@ -4,22 +4,22 @@
   padding: 5rem;
   align-items: center;
   justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: row;
   gap: 1rem;
 
+  article {
+    display: grid;
+    gap: 2rem;
+  }
   h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     color: var(--colorTextPrimary);
   }
   img {
     width: 35vw;
     height: 35vw;
-    min-width: 350px;
-    min-height: 350px;
     margin-bottom: 1rem;
-    padding: 3rem;
-    border-style: none;
-    border-radius: 20rem;
+    border-radius: 50%;
   }
   p {
     width: 45vw;
@@ -29,12 +29,22 @@
   }
   @media (max-width: 1000px) {
     flex-direction: column-reverse;
-    padding: 2rem;
+    padding: 3rem 1rem 3rem 1rem;
+    min-height: 40vw;
     h1 {
       font-size: 3rem;
     }
     p {
       font-size: 1.2rem;
+      width: auto;
+      min-width: auto;
+    }
+    img {
+      min-width: 300px;
+      min-height: 300px;
+    }
+    article {
+      gap: 1rem;
     }
   }
 }
